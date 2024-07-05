@@ -3,7 +3,7 @@ import pandas as pd
 
 app = FastAPI()
 
-df_movies = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\df_movies.parquet')
+df_movies = pd.read_parquet('Data/df_movies.parquet')
                           
 @app.get("/")
 
