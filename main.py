@@ -5,8 +5,6 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-app = FastAPI()
-
 df_movies = pd.read_parquet('Data/df_movies.parquet')
 df_recommend = pd.read_parquet('Data/df_recommend.parquet')
 
@@ -17,6 +15,8 @@ df_recommend = df_recommend.reset_index(drop=True)
 
 # Calculamos la matriz de similitud de coseno
 cosine_matrix = cosine_similarity(matrix)
+
+app = FastAPI()
                           
 @app.get("/")
 
