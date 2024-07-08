@@ -8,9 +8,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 df_movies = pd.read_parquet('Data/df_movies.parquet')
 df_recommend = pd.read_csv('Data/df_recommend.csv')
 
-df_movies = pd.read_parquet('Data/df_movies.parquet')
-df_recommend = pd.read_parquet('Data/df_recommend.parquet')
-
 vectorizer = TfidfVectorizer()
 matrix = vectorizer.fit_transform(df_recommend['title'] + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['actors'].astype(str) + ' ' + df_recommend['production_companies'].astype(str) + ' ' + df_recommend['directors'].astype(str) + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['genres'].astype(str))
 
