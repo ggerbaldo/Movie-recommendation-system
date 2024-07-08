@@ -103,7 +103,6 @@ python-json-logger
 python-multipart
 pytz
 PyWavelets
-pywin32
 pywinpty
 PyYAML
 pyzmq
