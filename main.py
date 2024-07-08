@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-df_movies = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\Data\\df_movies.parquet')
+df_movies = pd.read_parquet('Data/df_movies.parquet')
 df_recommend = pd.read_csv('C:\\Users\\felip\\Desktop\\Proyecto1\\Data\\df_recommend.csv')
 
 df_movies = pd.read_parquet('Data/df_movies.parquet')
