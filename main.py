@@ -7,20 +7,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI()
 
-df_movies = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\Data\\df_movies.parquet')
-df_recommend = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\Data\\df_recommend.parquet')
-
-# Convertimos columna 'title' a una representacón numérica usando Tf-IDF
-vectorizer = TfidfVectorizer()
-matrix = vectorizer.fit_transform(df_recommend['title'] + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['actors'].astype(str) + ' ' + df_recommend['production_companies'].astype(str) + ' ' + df_recommend['overview'].astype(str) + ' ' + df_recommend['directors'].astype(str) + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['genres'].astype(str))
-
-# Reindexamos el dataframe
-df_recommend = df_recommend.reset_index(drop=True)
-
-# Calculamos la matriz de similitud de coseno
-cosine_matrix = cosine_similarity(matrix)
+df_movies = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\df_movies.parquet')
                           
-
 @app.get("/")
 
 def index():
@@ -116,18 +104,3 @@ def get_director(nombre_director:str):
             detalles_peliculas.append(f"{nombre_pelicula} (Lanzamiento: {fecha_lanzamiento}, Retorno: {retorno_individual:2f}, Costo: {costo}, Ganancia: {ganancia})")
         peliculas_formateadas = "\n".join(detalles_peliculas)
         return f"El director '{nombre_director}' ha dirigido {cantidad_peliculas} {'películas' if cantidad_peliculas != 1 else 'película'}, con un retorno total de {retorno_total}.\nDetalles de las películas:\n{peliculas_formateadas}"
-    
-@app.get("/recommend/{Recomendarpelículas}", response_model=List[str])
-
-def recomendacion(titulo: str):
-    titulo = titulo.lower()
-    titulo_pelicula = df_recommend[df_recommend['title'].str.lower() == titulo]
-
-    if titulo_pelicula.empty:
-        raise HTTPException(status_code=404, detail=f"No se encontró la película {titulo}")
-
-    indice_producto = titulo_pelicula.index[0]
-    similitudes_producto = cosine_matrix[indice_producto]
-    indices_top_5_similares = np.argsort(-similitudes_producto)[1:6]
-    top_5_peliculas = df_recommend.loc[indices_top_5_similares, 'title'].tolist()  # Convierte a lista
-    return top_5_peliculas # print(f"Películas similares a {titulo.capitalize()}:{top_5_peliculas}")
