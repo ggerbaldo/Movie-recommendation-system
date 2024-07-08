@@ -4,6 +4,7 @@ nltk
 notebook
 numpy
 pandas
+pyarrow
 scikit-learn
 uvicorn
 
