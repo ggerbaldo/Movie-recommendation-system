@@ -62,7 +62,7 @@ kiwisolver
 llvmlite
 markdown-it-py
 MarkupSafe
-matplotli
+matplotlib
 matplotlib-inline
 mdurl
 mistune
