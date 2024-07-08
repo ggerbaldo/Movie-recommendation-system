@@ -9,7 +9,7 @@ df_movies = pd.read_parquet('Data/df_movies.parquet')
 df_recommend = pd.read_parquet('Data/df_recommend.parquet')
 
 vectorizer = TfidfVectorizer()
-matrix = vectorizer.fit_transform(df_recommend['title'] + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['actors'].astype(str) + ' ' + df_recommend['production_companies'].astype(str) + ' ' + df_recommend['overview'].astype(str) + ' ' + df_recommend['directors'].astype(str) + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['genres'].astype(str))
+matrix = vectorizer.fit_transform(df_recommend['title'] + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['actors'].astype(str) + ' ' + df_recommend['production_companies'].astype(str) + ' ' + df_recommend['directors'].astype(str) + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['genres'].astype(str))
 
 df_recommend = df_recommend.reset_index(drop=True)
 
