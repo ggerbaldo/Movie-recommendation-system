@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI()
 
-df_movies = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\df_movies.parquet')
+df_movies = pd.read_parquet('Data/df_movies.parquet')
 df_recommend = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\df_recommend.parquet')
 
 vectorizer = TfidfVectorizer()
