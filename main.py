@@ -5,10 +5,8 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-app = FastAPI()
-
-df_movies = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\df_movies.parquet')
-df_recommend = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\df_recommend.parquet')
+df_movies = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\Data\\df_movies.parquet')
+df_recommend = pd.read_parquet('C:\\Users\\felip\\Desktop\\Proyecto1\\Data\\df_recommend.parquet')
 
 vectorizer = TfidfVectorizer()
 matrix = vectorizer.fit_transform(df_recommend['title'] + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['actors'].astype(str) + ' ' + df_recommend['production_companies'].astype(str) + ' ' + df_recommend['overview'].astype(str) + ' ' + df_recommend['directors'].astype(str) + ' ' + df_recommend['genres'].astype(str) + ' ' + df_recommend['genres'].astype(str))
@@ -17,7 +15,9 @@ df_recommend = df_recommend.reset_index(drop=True)
 
 # Calculamos la matriz de similitud de coseno
 cosine_matrix = cosine_similarity(matrix)
-                          
+
+app = FastAPI()
+
 @app.get("/")
 
 def index():
@@ -127,4 +127,4 @@ def recomendacion(titulo: str):
     similitudes_producto = cosine_matrix[indice_producto]
     indices_top_5_similares = np.argsort(-similitudes_producto)[1:6]
     top_5_peliculas = df_recommend.loc[indices_top_5_similares, 'title'].tolist()  # Convierte a lista
-    return print(f"Películas similares a {titulo.capitalize()} son:{top_5_peliculas}")
+    return top_5_peliculas # print(f"Películas similares a {titulo.capitalize()} son:{top_5_peliculas}")
