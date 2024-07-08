@@ -127,4 +127,4 @@ def recomendacion(titulo: str):
     similitudes_producto = cosine_matrix[indice_producto]
     indices_top_5_similares = np.argsort(-similitudes_producto)[1:6]
     top_5_peliculas = df_recommend.loc[indices_top_5_similares, 'title'].tolist()  # Convierte a lista
-    return print(f"Películas similares a {titulo.capitalize()} son:{top_5_peliculas}")
+    return top_5_peliculas
