@@ -17,9 +17,9 @@
 Este proyecto tiene como objetivo aplicar los conocimientos adquiridos durante los seis módulos de la carrera de Data Science en Soy Henry. A través del framework FastAPI, pondremos a disposición la información transformada de una base de datos relacionada con el mundo cinematográfico. Entre las funcionalidades disponibles se encuentra un Sistema de Recomendación de Películas, así como consultas sobre información de películas, directores, actores y la recepción del público. Utilizaremos técnicas de Machine Learning para analizar el historial de valoración, puntuaciones y patrones de comportamiento de los usuarios. Además, desplegaremos una API de acceso público que permitirá explorar diversos aspectos del mundo del cine.. (link: https://proyecto1-cp3v.onrender.com). 
 
 
-##Aspectos iniciales:
 
-## Hemos recibido una base de datos en dos archivos en formato CSV (Comma Separated Values) con aproximadamente 45,000 registros. Nuestra tarea consiste en procesar y transformar estos datos (ETL) para crear seis funciones que se consumirán a través de una API. Además, implementaremos un modelo de recomendación de películas y presentaremos los resultados para uso público en un entorno de Render. Para lograrlo, realizaremos un Análisis Exploratorio de los Datos (EDA) con el objetivo de mejorar la implementación del modelo.
+## Aspectos iniciales:
+Hemos recibido una base de datos en dos archivos en formato CSV (Comma Separated Values) con aproximadamente 45,000 registros. Nuestra tarea consiste en procesar y transformar estos datos (ETL) para crear seis funciones que se consumirán a través de una API. Además, implementaremos un modelo de recomendación de películas y presentaremos los resultados para uso público en un entorno de Render. Para lograrlo, realizaremos un Análisis Exploratorio de los Datos (EDA) con el objetivo de mejorar la implementación del modelo.
 
 ## Extracción, Carga y Transformación de los datos (ETL).
 
