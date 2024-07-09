@@ -130,7 +130,7 @@ def get_actor(nombre_actor:str):
     else:
         # Si es positiva la búsqueda, suma las peliculas encontradas, calcula su retorno promedio e imprime resultado. 
         cantidad_peliculas = len(peliculas_actor)
-        retorno_promedio = peliculas_actor['return'].mean()
+        retorno_promedio = peliculas_actor['revenue'].mean()
         return f"{nombre_actor} ha participado en {cantidad_peliculas} {'filmaciones' if cantidad_peliculas != 1 else 'filmación'}, con un retorno promedio de ${retorno_promedio:.2f}."
 
 
