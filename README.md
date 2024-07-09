@@ -19,7 +19,7 @@ Este proyecto tiene como objetivo aplicar los conocimientos adquiridos durante l
 
 ##Aspectos iniciales:
 
-Hemos recibido una base de datos en dos archivos en formato CSV (Comma Separated Values) con aproximadamente 45,000 registros. Nuestra tarea consiste en procesar y transformar estos datos (ETL) para crear seis funciones que se consumirán a través de una API. Además, implementaremos un modelo de recomendación de películas y presentaremos los resultados para uso público en un entorno de Render. Para lograrlo, realizaremos un Análisis Exploratorio de los Datos (EDA) con el objetivo de mejorar la implementación del modelo.
+## Hemos recibido una base de datos en dos archivos en formato CSV (Comma Separated Values) con aproximadamente 45,000 registros. Nuestra tarea consiste en procesar y transformar estos datos (ETL) para crear seis funciones que se consumirán a través de una API. Además, implementaremos un modelo de recomendación de películas y presentaremos los resultados para uso público en un entorno de Render. Para lograrlo, realizaremos un Análisis Exploratorio de los Datos (EDA) con el objetivo de mejorar la implementación del modelo.
 
 ## Extracción, Carga y Transformación de los datos (ETL).
 
