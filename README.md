@@ -68,6 +68,6 @@ Como primera medida, se eliminan un conjunto de columnas solicitadas se verifica
 ## Análisis Exploratorio de Datos (EDA).
 
 En esta parte del proyecto donde desarrollaremos un modelo para recomendar 5 peliculas de acuerdo a una indicada, utilizaremos una serie de herramientas que nos ayudarán en el análisis y exploración de los datos: **seaborn**, **matplotlib**, **ydata-profiling**.
-Partimos del dataset transformado en el proceso de ETL, analizamos los campos utlizando algunos gráficos y nube de palabras y se decide utilizar el modelo de Similitid del Coseno para trabajar con los campos categóricos. Para ello, realizamos una breve transformación en el dataframe, reagrupando las columnas Director y Actores, para que cada registro de pelicula encuentre una sus actores y directores en un sólo campo como listas. Posteriormente, se crea la función y se suma a la FastAPI, para luego deployar todo el código **main.py** en el Render.
+Partimos del dataset transformado en el proceso de ETL, analizamos los campos utlizando algunos gráficos y nube de palabras y se decide utilizar el modelo de Similitid del Coseno para trabajar con los campos categóricos. Para ello, realizamos una breve transformación en el dataframe, reagrupando las columnas Director y Actores, para que cada registro/fila de pelicula encuentre sus actores y directores en un sólo campo como listas. Posteriormente, se crea la función **recomendacion** y se suma a la FastAPI, para luego deployar todo el código **main.py** en el Render.
 
 ---------------------------------------------
