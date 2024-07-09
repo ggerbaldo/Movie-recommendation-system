@@ -13,8 +13,9 @@
 
 
 -----------------------------------------
-## Aspectos iniciales
+## Descripción y objeto del proyecto
 Este proyecto tiene como objetivo aplicar los conocimientos adquiridos durante los seis módulos de la carrera de Data Science en Soy Henry. A través del framework FastAPI, pondremos a disposición la información transformada de una base de datos relacionada con el mundo cinematográfico. Entre las funcionalidades disponibles se encuentra un Sistema de Recomendación de Películas, así como consultas sobre información de películas, directores, actores y la recepción del público. Utilizaremos técnicas de Machine Learning para analizar el historial de valoración, puntuaciones y patrones de comportamiento de los usuarios. Además, desplegaremos una API de acceso público que permitirá explorar diversos aspectos del mundo del cine.. (link: https://proyecto1-cp3v.onrender.com). 
+
 
 ##Aspectos iniciales:
 
